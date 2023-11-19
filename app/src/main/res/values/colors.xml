@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shades of Blue -->
+    <color name="main_blue">#007AC1</color> <!-- Main blue color -->
+    <color name="blue_darker">#11009E</color> <!-- Darker shade of blue -->
+    <color name="blue_light">#63A0D2</color> <!-- Lighter shade of blue -->
+    <color name="black">#000000</color> <!-- Lighter shade of blue -->
+    <color name="white">#ffffff</color> <!-- Lighter shade of blue -->
+
+    <!-- Grays -->
+    <color name="gray_light">#ECECEC</color> <!-- Light gray -->
+    <color name="gray">#C0C0C0</color> <!-- Medium gray -->
+    <color name="gray_dark">#646464</color> <!-- Dark gray -->
+
+    <!-- Complementary Colors -->
+    <color name="green">#00A651</color> <!-- Green -->
+    <color name="yellow">#F5C518</color> <!-- Yellow -->
+    <color name="orange">#FF8800</color> <!-- Orange -->
+
+    <!-- Primary brand colors -->
+    <color name="colorPrimary">#6200EE</color> <!-- Change to your desired color value -->
+    <color name="colorPrimaryVariant">#3700B3</color> <!-- Change to your desired color value -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- Change to your desired color value -->
+
+    <!-- Secondary brand colors -->
+    <color name="colorSecondary">#03DAC5</color> <!-- Change to your desired color value -->
+    <color name="colorSecondaryVariant">#018786</color> <!-- Change to your desired color value -->
+    <color name="colorOnSecondary">#000000</color> <!-- Change to your desired color value -->
+
+    <!-- Additional brand colors -->
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="purple_200">#BB86FC</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+
+    <color name="red">#FF0000</color> <!-- Adding red color -->
+
+
+
+    <color name="primary">#007AC1</color>
+
+</resources>

@@ -1,0 +1,58 @@
+<!-- res/drawable/vector_swimming.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Swimmer's body -->
+    <path
+        android:name="body"
+        android:fillColor="#FFB899"
+        android:pathData="M50,30 C60,30 60,50 50,50 C40,50 40,30 50,30z" />
+
+    <!-- Group for left arm -->
+    <group
+        android:name="leftArmGroup"
+        android:pivotX="30"
+        android:pivotY="50">
+        <path
+            android:name="leftArm"
+            android:fillColor="#FFB899"
+            android:pathData="M20,50 L40,50 L35,55 L20,55z" />
+    </group>
+
+    <!-- Group for right arm -->
+    <group
+        android:name="rightArmGroup"
+        android:pivotX="70"
+        android:pivotY="50">
+        <path
+            android:name="rightArm"
+            android:fillColor="#FFB899"
+            android:pathData="M60,50 L80,50 L75,55 L60,55z" />
+    </group>
+
+    <!-- Group for left leg -->
+    <group
+        android:name="leftLegGroup"
+        android:pivotX="40"
+        android:pivotY="70">
+        <path
+            android:name="leftLeg"
+            android:fillColor="#FFB899"
+            android:pathData="M40,55 L45,80 L40,85 L35,80z" />
+    </group>
+
+    <!-- Group for right leg -->
+    <group
+        android:name="rightLegGroup"
+        android:pivotX="60"
+        android:pivotY="70">
+        <path
+            android:name="rightLeg"
+            android:fillColor="#FFB899"
+            android:pathData="M55,55 L60,80 L55,85 L50,80z" />
+    </group>
+
+</vector>

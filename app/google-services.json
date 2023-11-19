@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "588354826872",
+    "project_id": "swimfo-5a172",
+    "storage_bucket": "swimfo-5a172.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588354826872:android:8c97dfd770f8428b8ef38d",
+        "android_client_info": {
+          "package_name": "com.example.swimfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588354826872-pnroshbgv4pt4eci7vgkmm8p4cqc8f8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASqxGWst3se2fkHhPgj0oZmJxfZuDcH2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588354826872-pnroshbgv4pt4eci7vgkmm8p4cqc8f8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

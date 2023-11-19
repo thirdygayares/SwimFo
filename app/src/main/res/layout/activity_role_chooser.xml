@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".RoleChooser">
+
+    <TextView
+        android:id="@+id/roletv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/custom_poppins"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Select what to Manage"
+        android:textColor="#3d0000"
+        android:textStyle="bold" />
+    <RelativeLayout
+        android:layout_below="@+id/roletv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/section_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn_blue"
+            android:fontFamily="@font/custom_poppins"
+            android:onClick="ClickSection"
+            android:text="Section"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/section_btn"
+            app:backgroundTint="@null"
+            android:textStyle="bold"
+            android:onClick="ClickTopic"
+            android:id="@+id/topic_btn"
+            android:fontFamily="@font/custom_poppins"
+            android:background="@drawable/bg_btn_blue"
+            android:text="Topic"/>
+        <Button
+            android:id="@+id/quiz_btn"
+            android:layout_width="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topic_btn"
+            app:backgroundTint="@null"
+            android:textStyle="bold"
+            android:onClick="ClickAdd"
+            android:fontFamily="@font/custom_poppins"
+            android:background="@drawable/bg_btn_blue"
+            android:text="New Quiz"/>
+
+        <Button
+            android:id="@+id/btnAddCoTeacher"
+            android:layout_below="@+id/quiz_btn"
+            android:layout_width="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@null"
+            android:textStyle="bold"
+            android:fontFamily="@font/custom_poppins"
+            android:background="@drawable/bg_btn_blue"
+            android:text="Add CoTeacher"/>
+
+
+        <Button
+            android:id="@+id/btnQuiz"
+            android:layout_below="@+id/btnAddCoTeacher"
+            android:layout_width="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@null"
+            android:textStyle="bold"
+            android:fontFamily="@font/custom_poppins"
+            android:background="@drawable/bg_btn_blue"
+            android:text="Logout"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

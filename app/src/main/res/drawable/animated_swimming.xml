@@ -1,0 +1,21 @@
+<!-- res/drawable/animated_swimming.xml -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/vector_swimming">
+
+    <target
+        android:name="leftArmGroup"
+        android:animation="@animator/arm_animation" />
+
+    <target
+        android:name="rightArmGroup"
+        android:animation="@animator/arm_animation" />
+
+    <target
+        android:name="leftLegGroup"
+        android:animation="@animator/leg_animation" />
+
+    <target
+        android:name="rightLegGroup"
+        android:animation="@animator/leg_animation" />
+
+</animated-vector>

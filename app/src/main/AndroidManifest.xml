@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.swimfo" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/swim_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/swim_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SwimFo"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31" >
+
+
+        <activity
+            android:name=".game.StartGameStudent"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+        <activity android:name=".Teacher.Section.Leaderboard" />
+        <activity android:name=".Finish" />
+        <activity android:name=".Student.Quiz.QuizContainer" />
+        <activity android:name=".Student.Quiz.QuizSelect" />
+        <activity android:name=".Teacher.Topic.AddChapter" />
+        <activity
+            android:name=".Teacher.Topic.AddTopic"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name=".Teacher.Topic.AddLesson" />
+        <activity android:name=".Teacher.Topic.LessonsActivity" />
+        <activity
+            android:name=".Teacher.Topic.TopicContent"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.EditStudent"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.AddStudent"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.Section.StudentList"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TeacherEndLogin"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RoleChooser"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.TeacherMain"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".game.ChooseStroke"
+            android:exported="true" />
+        <activity
+            android:name=".game.MainActivityMainGame"
+            android:exported="true" />
+    </application>
+
+</manifest>

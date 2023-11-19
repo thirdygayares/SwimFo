@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_chapter.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@drawable/thin_bg_v4"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textViewChapterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="System Integ"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textViewChapterDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_dark"
+        android:text="Lorem Ipsum"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <!-- Add other views for displaying chapter details, if needed -->
+
+</LinearLayout>

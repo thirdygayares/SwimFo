@@ -1,0 +1,30 @@
+<!-- res/menu/drawer_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_section"
+            android:icon="@drawable/section"
+            android:title="Section" />
+        <item
+            android:id="@+id/nav_topic"
+            android:icon="@drawable/topic"
+            android:title="Topic" />
+
+        <item
+            android:id="@+id/nav_quiz"
+            android:icon="@drawable/quiz"
+            android:title="Quiz" />
+
+        <item
+            android:id="@+id/nav_coteacher"
+            android:icon="@drawable/teacher"
+            android:title="Co Teacher" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="Logout" />
+
+        <!-- Add more items as needed -->
+    </group>
+</menu>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Teacher.AddStudent">
+
+
+    <RelativeLayout
+        android:id="@+id/action"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/main_blue"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="Add Student"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_below="@id/action"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:id="@+id/pic"
+        android:translationZ="95dp">
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="96dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/swim_logo"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
+            <ImageView
+                android:id="@+id/edit"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_edit" />
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title_header"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:letterSpacing="0.1"
+        android:text="Sign Up"
+        android:gravity="center_horizontal" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@+id/pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="10dp"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="0dp">
+
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:text="Student Name"/>
+            <EditText
+                android:id="@+id/register_name"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/thin_bg_v4"
+                android:hint="Complete name"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:text="Id Number"/>
+
+            <EditText
+                android:id="@+id/idnum"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:inputType="number"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:background="@drawable/thin_bg_v4"
+                android:hint="Id Number"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:text="Password"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_hide"
+                    android:layout_alignParentRight="true"
+                    android:translationZ="90dp"
+                    android:id="@+id/show_pass_btn"
+                    android:onClick="ShowHidePass"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="23dp"/>
+
+                <EditText
+                    android:id="@+id/register_password"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/thin_bg_v4"
+                    android:drawablePadding="10dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:text="Confirm Password"/>
+ <RelativeLayout
+                android:layout_width="match_parent"
+     android:visibility="gone"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_hide"
+                    android:layout_alignParentRight="true"
+                    android:translationZ="90dp"
+                    android:id="@+id/show_pass_btn1"
+                    android:onClick="ShowHidePass1"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="23dp"/>
+
+     <EditText
+         android:visibility="gone"
+         android:id="@+id/confirm_password"
+         android:layout_width="300dp"
+         android:layout_height="50dp"
+         android:layout_marginTop="10dp"
+         android:background="@drawable/thin_bg_v4"
+         android:drawablePadding="10dp"
+         android:hint="Confirm Password"
+         android:inputType="textPassword"
+         android:padding="10dp"
+         android:textColor="#000000"
+         android:textSize="15sp" />
+
+            </RelativeLayout>
+
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/profile_image"
+                android:layout_width="200dp"
+                android:translationZ="130dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:id="@+id/updateImg"
+                android:background="@drawable/bg_btn_blue"
+                app:backgroundTint="@null"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:translationZ="90dp"
+        android:id="@+id/progress_bar"/>
+
+
+</RelativeLayout>

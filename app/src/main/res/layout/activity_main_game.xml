@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#33AEFD"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+
+    tools:context=".game.MainActivityMainGame">
+
+
+
+
+
+
+    <com.example.swimfo.game.NonScrollableScrollView
+        android:id="@+id/swimmingPoolScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/swimmingPool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- First set of lanes -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"
+                    android:layout_marginStart="100dp"/>
+                <ImageView
+                    android:layout_marginStart="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"
+                    android:layout_marginStart="100dp"/>
+                <ImageView
+                    android:layout_marginStart="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"
+                    android:layout_marginStart="100dp"/>
+                <ImageView
+                    android:layout_marginStart="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"
+                    android:layout_marginStart="100dp"/>
+                <ImageView
+                    android:layout_marginStart="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lane"/>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </com.example.swimfo.game.NonScrollableScrollView>
+
+
+
+    <!--    Lane of 4 lanes-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+
+        >
+        <!--        first lane-->
+        <LinearLayout
+            android:id="@+id/firstLane"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent"
+            android:foreground="@drawable/lane_ripple_effect"
+            android:clickable="true"
+            android:focusable="true"
+            >
+
+
+        </LinearLayout>
+
+        <!--        second lane-->
+        <LinearLayout
+            android:id="@+id/secondLane"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+
+            android:orientation="horizontal"
+            android:background="@android:color/transparent"
+            android:foreground="@drawable/lane_ripple_effect"
+            android:clickable="true"
+            android:focusable="true"
+
+            >
+
+
+        </LinearLayout>
+
+        <!--        third lane-->
+        <LinearLayout
+            android:id="@+id/thirdLane"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="4dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent"
+            android:foreground="@drawable/lane_ripple_effect"
+            android:clickable="true"
+            android:focusable="true"
+
+            >
+
+
+        </LinearLayout>
+
+        <!--        fourth lane-->
+        <LinearLayout
+            android:id="@+id/fourthLane"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@android:color/transparent"
+            android:foreground="@drawable/lane_ripple_effect"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:fontFamily="@font/bubblegumsans"
+        android:textSize="60sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/btnPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/pause"
+        android:padding="20dp"
+        />
+
+</RelativeLayout>
