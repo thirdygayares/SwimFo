@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp"
+    android:id="@+id/student"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/thin_bg_v4"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/student_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsbold"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Teacher Name"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/passl"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="sdsdas"
+                    android:textSize="15sp"
+                    android:layout_margin="5dp"
+                    android:id="@+id/tempPass"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Copy"
+                    android:background="@color/green"
+                    android:textColor="@color/white"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:textSize="15sp"
+                    android:layout_margin="5dp"
+                    android:id="@+id/copy"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit"
+                android:src="@drawable/ic_edit"/>
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="15dp"
+                android:id="@+id/remove"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_remove"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

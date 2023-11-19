@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.swimfo.R;
 import com.example.swimfo.Model.SectionModel;
-import com.example.swimfo.Teacher.Section.StudentList;
+import com.example.swimfo.Teacher.section.StudentList;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;

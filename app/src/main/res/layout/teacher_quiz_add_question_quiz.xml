@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#FFFBFB"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Teacher.quiz.AddQuestionQuiz"
+    android:layout_height="match_parent">
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/txtQuizTitle"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="QUIZ 1: SWIMMING BASICS"
+                android:textSize="20sp"
+                android:background="#FFFBFB"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppinsbold"
+                />
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recyclerView"
+                android:scrollbars="none"
+                android:padding="20dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddMultipleChoiceQuestion"
+                    style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:drawableTint="@color/primary"
+                    android:fontFamily="@font/poppinsbold"
+                    android:paddingVertical="10dp"
+                    android:stateListAnimator="@null"
+                    android:text="+ Add Multiple Choice Question"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:backgroundTint="@android:color/transparent"
+                    app:cornerRadius="12dp"
+                    app:rippleColor="@color/green"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddIdenticationQuestion"
+                    style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:drawableTint="@color/primary"
+                    android:fontFamily="@font/poppinsbold"
+                    android:paddingVertical="10dp"
+                    android:stateListAnimator="@null"
+                    android:text="+ Add Identification Question"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:backgroundTint="@android:color/transparent"
+                    app:cornerRadius="12dp"
+                    app:rippleColor="@color/green"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="1dp" />
+
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddQuiz"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="80dp"
+                android:drawableTint="@color/primary"
+                android:fontFamily="@font/poppinsbold"
+                android:paddingVertical="10dp"
+                android:stateListAnimator="@null"
+                android:text="Submit"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:backgroundTint="@color/primaryVariant"
+                app:cornerRadius="12dp"
+                app:rippleColor="@color/green"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp" />
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        />
+
+</RelativeLayout>

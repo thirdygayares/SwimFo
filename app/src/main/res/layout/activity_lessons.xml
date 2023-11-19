@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Teacher.Topic.LessonsActivity">
+    tools:context=".Teacher.topic.LessonsActivity">
     <RelativeLayout
         android:id="@+id/action"
         android:layout_width="match_parent"

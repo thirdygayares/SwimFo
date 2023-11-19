@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <style name="imageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">51%</item>
+    </style>
+
+    <style name="imageViewRounded20">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="imageViewRounded10">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="BottomNavigationView.style" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+    <style name="CalendarDateTextAppearance" parent="TextAppearance.AppCompat">
+        <!-- Customize your text appearance for dates here -->
+
+    </style>
+
+    <style name="CalendarWeekDayTextAppearance" parent="TextAppearance.AppCompat">
+        <!-- Customize your text appearance for week days here -->
+    </style>
+
+
+
+
+
+</resources>

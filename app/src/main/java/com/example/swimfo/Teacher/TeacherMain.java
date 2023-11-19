@@ -14,10 +14,10 @@ import android.view.MenuItem;
 
 import com.example.swimfo.LoginActivity;
 import com.example.swimfo.R;
-import com.example.swimfo.Teacher.CoTeacher.CoTeacherMain;
-import com.example.swimfo.Teacher.Quiz.AddQuestion;
-import com.example.swimfo.Teacher.Section.MainTeacher;
-import com.example.swimfo.Teacher.Topic.TopicManagement;
+import com.example.swimfo.Teacher.coteacher.CoTeacherMain;
+import com.example.swimfo.Teacher.quiz.QuizHomePage;
+import com.example.swimfo.Teacher.section.MainTeacher;
+import com.example.swimfo.Teacher.topic.TopicManagement;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -68,7 +68,7 @@ public class TeacherMain extends AppCompatActivity {
 
                 }else if (itemId == R.id.nav_quiz) {
                     // Handle action for Feedback
-                    selectedFragment = new AddQuestion();
+                    selectedFragment = new QuizHomePage();
 
                 }else if (itemId == R.id.nav_coteacher) {
                     // Handle action for About
@@ -105,6 +105,15 @@ public class TeacherMain extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 
 

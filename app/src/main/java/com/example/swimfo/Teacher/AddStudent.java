@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.swimfo.R;
-import com.example.swimfo.Teacher.Section.StudentList;
+import com.example.swimfo.Teacher.section.StudentList;
 import com.example.swimfo.Model.StudentModel;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -193,7 +193,6 @@ public class AddStudent extends AppCompatActivity {
                                                     progressDialog.dismiss();
                                                     if (updateTask.isSuccessful()) {
                                                         // User profile updated successfully
-
                                                         // Save additional data in Realtime Database
                                                         DatabaseReference studentRef = FirebaseDatabase.getInstance().getReference("studentlist");
                                                         String studentId = studentRef.push().getKey();

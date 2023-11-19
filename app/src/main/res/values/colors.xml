@@ -13,7 +13,6 @@
     <color name="gray_dark">#646464</color> <!-- Dark gray -->
 
     <!-- Complementary Colors -->
-    <color name="green">#00A651</color> <!-- Green -->
     <color name="yellow">#F5C518</color> <!-- Yellow -->
     <color name="orange">#FF8800</color> <!-- Orange -->
 
@@ -34,10 +33,15 @@
     <color name="teal_200">#03DAC5</color>
     <color name="teal_700">#018786</color>
 
-    <color name="red">#FF0000</color> <!-- Adding red color -->
 
 
 
     <color name="primary">#007AC1</color>
+
+    <color name="recylerbg">#FFFCFC</color>
+    <color name="green">#00C12A</color>
+    <color name="red">#FF0E1C</color>
+    <color name="primaryVariant">#4E85FF</color>
+
 
 </resources>

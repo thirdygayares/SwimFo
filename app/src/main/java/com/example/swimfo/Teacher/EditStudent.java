@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.swimfo.R;
-import com.example.swimfo.Teacher.Section.StudentList;
+import com.example.swimfo.Teacher.section.StudentList;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

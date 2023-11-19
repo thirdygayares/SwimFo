@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.swimfo" >
+    package="com.example.swimfo">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -16,25 +16,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwimFo"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31" >
-
+        tools:targetApi="31">
+        <activity
+            android:name=".CoTeacherOrStudent"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.coteacher.EditCoTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.coteacher.AddCoTeacher"
+            android:exported="false" />
 
         <activity
             android:name=".game.StartGameStudent"
             android:exported="false"
             android:screenOrientation="fullSensor" />
-        <activity android:name=".Teacher.Section.Leaderboard" />
+        <activity android:name=".Teacher.section.Leaderboard" />
         <activity android:name=".Finish" />
         <activity android:name=".Student.Quiz.QuizContainer" />
         <activity android:name=".Student.Quiz.QuizSelect" />
-        <activity android:name=".Teacher.Topic.AddChapter" />
+        <activity android:name=".Teacher.topic.AddChapter" />
         <activity
-            android:name=".Teacher.Topic.AddTopic"
+            android:name=".Teacher.topic.AddTopic"
             android:windowSoftInputMode="stateVisible|adjustResize" />
-        <activity android:name=".Teacher.Topic.AddLesson" />
-        <activity android:name=".Teacher.Topic.LessonsActivity" />
+        <activity android:name=".Teacher.topic.AddLesson" />
+        <activity android:name=".Teacher.topic.LessonsActivity" />
         <activity
-            android:name=".Teacher.Topic.TopicContent"
+            android:name=".Teacher.topic.TopicContent"
             android:exported="false" />
         <activity
             android:name=".Teacher.EditStudent"
@@ -43,7 +51,7 @@
             android:name=".Teacher.AddStudent"
             android:exported="false" />
         <activity
-            android:name=".Teacher.Section.StudentList"
+            android:name=".Teacher.section.StudentList"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
@@ -61,8 +69,8 @@
             android:name=".SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".Teacher.TeacherMain"
-            android:exported="true" >
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -70,7 +78,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Teacher.TeacherMain"
             android:exported="true" />
         <activity
             android:name=".game.ChooseStroke"

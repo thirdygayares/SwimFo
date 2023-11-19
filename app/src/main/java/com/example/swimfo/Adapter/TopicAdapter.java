@@ -17,10 +17,10 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.swimfo.Teacher.Topic.AddTopic;
-import com.example.swimfo.Teacher.Topic.LessonsActivity;
+import com.example.swimfo.Teacher.topic.AddTopic;
+import com.example.swimfo.Teacher.topic.LessonsActivity;
 import com.example.swimfo.R;
-import com.example.swimfo.Teacher.Topic.TopicModel;
+import com.example.swimfo.Teacher.topic.TopicModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;

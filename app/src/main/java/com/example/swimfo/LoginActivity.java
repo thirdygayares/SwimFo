@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.swimfo.Teacher.TeacherMain;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -89,7 +90,7 @@ public class  LoginActivity extends AppCompatActivity {
                 //TODO add Co teacher
 
                 Toast.makeText(LoginActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
-                Class<?> destinationActivity = loginType.equals("teacher") ? RoleChooser.class : MainActivity.class;
+                Class<?> destinationActivity = loginType.equals("teacher") ? TeacherMain.class : CoTeacherOrStudent.class;
                 startActivity(new Intent(getApplicationContext(), destinationActivity));
             } else {
                 simpleProgressBar.setVisibility(View.GONE);

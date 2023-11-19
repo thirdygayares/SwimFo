@@ -8,9 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.swimfo.Teacher.Quiz.AddQuestion;
-import com.example.swimfo.Teacher.Section.MainTeacher;
-import com.example.swimfo.Teacher.Topic.TopicManagement;
+import com.example.swimfo.legacy.AddQuestion;
+import com.example.swimfo.Teacher.TeacherMain;
+import com.example.swimfo.Teacher.topic.TopicManagement;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -27,7 +27,7 @@ public class RoleChooser extends AppCompatActivity {
 
 
     public void ClickSection(View view) {
-        Intent intent = new Intent(RoleChooser.this, MainTeacher.class);
+        Intent intent = new Intent(RoleChooser.this, TeacherMain.class);
         startActivity(intent);
     }
 

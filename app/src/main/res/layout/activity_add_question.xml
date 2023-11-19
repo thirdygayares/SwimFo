@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#ffffff"
-    tools:context=".Teacher.Quiz.AddQuestion">
+    tools:context=".legacy.AddQuestion">
 
     <RelativeLayout
         android:id="@+id/header"

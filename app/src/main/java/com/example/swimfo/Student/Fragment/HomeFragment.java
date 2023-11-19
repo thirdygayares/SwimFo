@@ -20,7 +20,7 @@ import com.bumptech.glide.Glide;
 import com.example.swimfo.ProfileActivity;
 import com.example.swimfo.R;
 import com.example.swimfo.Adapter.TopicAdapter;
-import com.example.swimfo.Teacher.Topic.TopicModel;
+import com.example.swimfo.Teacher.topic.TopicModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

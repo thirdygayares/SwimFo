@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.swimfo.Teacher.Topic.Lesson;
+import com.example.swimfo.Teacher.topic.Lesson;
 import com.example.swimfo.R;
-import com.example.swimfo.Teacher.Topic.AddChapter;
+import com.example.swimfo.Teacher.topic.AddChapter;
 
 import java.util.ArrayList;
 import java.util.List;

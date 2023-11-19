@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.swimfo.Chapter;
 import com.example.swimfo.R;
-import com.example.swimfo.Teacher.Topic.TopicContent;
+import com.example.swimfo.Teacher.topic.TopicContent;
 
 import java.util.ArrayList;
 import java.util.List;

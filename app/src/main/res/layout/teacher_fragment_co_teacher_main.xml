@@ -1,9 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
+    android:paddingVertical="20dp"
+    android:paddingHorizontal="10dp"
     android:layout_height="match_parent"
-    tools:context=".Teacher.CoTeacher.CoTeacherMain">
+    tools:context=".Teacher.section.StudentList">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/top2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Co Teacher"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            >
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addBtn"
+                android:onClick="ClickAdd"
+                style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:drawableTint="@color/primary"
+                android:fontFamily="@font/poppinsbold"
+                android:paddingVertical="10dp"
+                android:stateListAnimator="@null"
+                android:text=" + Add Teacher"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:backgroundTint="@color/primaryVariant"
+                app:cornerRadius="12dp"
+                app:rippleColor="@color/green"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/top2"
+        android:layout_above="@+id/logout_wrap">
+        <!-- Recycle View-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_view_av"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+        <!--end of recycle v iew-->
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/logout_wrap"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/main_blue">
+
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_leader"
+            android:translationZ="90dp" />
+
+        <Button
+
+            android:id="@+id/leadBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/icon"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_btn_blue"
+            android:drawableStart="@drawable/ic_logout"
+            android:text="Leaderboard"
+            android:onClick="LeaderBoard"
+            android:textColor="@color/white"
+            app:backgroundTint="@null" />
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        />
+
+</RelativeLayout>

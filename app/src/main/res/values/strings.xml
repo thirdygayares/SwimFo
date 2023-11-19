@@ -12,4 +12,19 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
+
+    <string-array name="options_array">
+        <item>Choose Correct Answer</item>
+        <item>Option 1</item>
+        <item>Option 2</item>
+        <item>Option 3</item>
+        <item>Option 4</item>
+    </string-array>
+
+
+    <string-array name="type_quiz">
+        <item>Multiple Choice</item>
+        <item>Identification</item>
+    </string-array>
+
 </resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".Teacher.quiz.AddQuiz">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="20dp"
+            android:hint="Type Quiz Title"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:id="@+id/etQuizTitle"
+            />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/gray"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Set Deadline"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins"
+            android:textFontWeight="600"
+            />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:dateTextAppearance="@style/CalendarDateTextAppearance"
+            android:weekDayTextAppearance="@style/CalendarWeekDayTextAppearance"
+            android:layout_marginTop="16dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="10dp"
+
+            android:layout_marginTop="10dp"
+            android:drawableTint="@color/primary"
+            android:fontFamily="@font/poppinsbold"
+            android:paddingVertical="10dp"
+            android:stateListAnimator="@null"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:backgroundTint="@color/primaryVariant"
+            app:cornerRadius="12dp"
+            app:rippleColor="@color/green"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
