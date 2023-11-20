@@ -1,4 +1,4 @@
-package com.example.swimfo.Adapter;
+package com.example.swimfo.unorganized.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.swimfo.Student.Quiz.QuizContainer;
-import com.example.swimfo.Model.QuizModel;
+import com.example.swimfo.unorganized.Model.QuizModel;
 import com.example.swimfo.R;
 
 import java.util.List;

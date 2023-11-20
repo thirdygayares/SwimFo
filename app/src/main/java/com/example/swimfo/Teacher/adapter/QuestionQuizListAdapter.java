@@ -37,11 +37,11 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
         switch (viewType) {
-            case R.layout.item_quiz_multiple_choice:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_quiz_multiple_choice, parent, false);
+            case R.layout.item_teacher_quiz_multiple_choice:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_teacher_quiz_multiple_choice, parent, false);
                 return new MultipleChoiceViewHolder(view);
-            case R.layout.item_quiz_identification:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_quiz_identification, parent, false);
+            case R.layout.item_teacher_quiz_identification:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_teacher_quiz_identification, parent, false);
                 return new IdentificationViewHolder(view);
             default:
                 // Handle default case
@@ -53,7 +53,7 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         QuestionQuizModel question = questionQuizModelList.get(position);
         switch (holder.getItemViewType()) {
-            case R.layout.item_quiz_multiple_choice:
+            case R.layout.item_teacher_quiz_multiple_choice:
                 MultipleChoiceViewHolder mcHolder = (MultipleChoiceViewHolder) holder;
                 mcHolder.edtQuestion.setText(question.getQuestionText());
                 mcHolder.txtQuestionNumber.setText("Question " + (position + 1));
@@ -119,7 +119,7 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
 
                 break;
-            case R.layout.item_quiz_identification:
+            case R.layout.item_teacher_quiz_identification:
                 IdentificationViewHolder idHolder = (IdentificationViewHolder) holder;
                 idHolder.edtQuestion.setText(question.getQuestionText());
                 idHolder.edtAnswer.setText(question.getAnswer());
@@ -200,9 +200,9 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
         QuestionQuizModel question = questionQuizModelList.get(position);
         switch (question.getType()) {
             case MULTIPLE_CHOICE:
-                return R.layout.item_quiz_multiple_choice;
+                return R.layout.item_teacher_quiz_multiple_choice;
             case IDENTIFICATION:
-                return R.layout.item_quiz_identification;
+                return R.layout.item_teacher_quiz_identification;
             default:
                 return -1;
         }

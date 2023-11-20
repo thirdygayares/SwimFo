@@ -1,4 +1,4 @@
-package com.example.swimfo.game;
+package com.example.swimfo.Student.game;
 
 import android.content.Context;
 import android.util.AttributeSet;

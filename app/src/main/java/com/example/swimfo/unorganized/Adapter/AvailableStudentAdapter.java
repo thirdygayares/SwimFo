@@ -1,4 +1,4 @@
-package com.example.swimfo.Adapter;
+package com.example.swimfo.unorganized.Adapter;
 
 import android.app.AlertDialog;
 import android.content.ClipboardManager;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.swimfo.Model.StudentModel;
+import com.example.swimfo.unorganized.Model.StudentModel;
 import com.example.swimfo.R;
 import com.example.swimfo.Teacher.EditStudent;
 import com.google.firebase.auth.FirebaseAuth;

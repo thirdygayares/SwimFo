@@ -1,4 +1,4 @@
-package com.example.swimfo.Model;
+package com.example.swimfo.unorganized.Model;
 
 public class SectionModel {
     String id, sectionName;

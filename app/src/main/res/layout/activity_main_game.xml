@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
 
-    tools:context=".game.MainActivityMainGame">
+    tools:context=".Student.game.MainActivityMainGame">
 
 
 
 
 
 
-    <com.example.swimfo.game.NonScrollableScrollView
+    <com.example.swimfo.Student.game.NonScrollableScrollView
         android:id="@+id/swimmingPoolScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -115,7 +115,7 @@
 
         </LinearLayout>
 
-    </com.example.swimfo.game.NonScrollableScrollView>
+    </com.example.swimfo.Student.game.NonScrollableScrollView>
 
 
 

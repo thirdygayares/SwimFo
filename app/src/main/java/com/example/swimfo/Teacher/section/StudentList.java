@@ -12,10 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.swimfo.Adapter.AvailableStudentAdapter;
-import com.example.swimfo.MainActivity;
+import com.example.swimfo.unorganized.Adapter.AvailableStudentAdapter;
 import com.example.swimfo.R;
-import com.example.swimfo.Model.StudentModel;
+import com.example.swimfo.unorganized.Model.StudentModel;
 import com.example.swimfo.Teacher.AddStudent;
 import com.example.swimfo.Teacher.TeacherMain;
 import com.google.firebase.auth.FirebaseAuth;

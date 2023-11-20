@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.swimfo.Adapter.LessonsAdapter;
+import com.example.swimfo.unorganized.Adapter.LessonsAdapter;
 import com.example.swimfo.Chapter;
 import com.example.swimfo.R;
 import com.google.android.gms.tasks.OnFailureListener;

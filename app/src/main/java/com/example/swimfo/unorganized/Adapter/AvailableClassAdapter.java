@@ -1,4 +1,4 @@
-package com.example.swimfo.Adapter;
+package com.example.swimfo.unorganized.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -16,7 +16,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.swimfo.R;
-import com.example.swimfo.Model.SectionModel;
+import com.example.swimfo.unorganized.Model.SectionModel;
 import com.example.swimfo.Teacher.section.StudentList;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

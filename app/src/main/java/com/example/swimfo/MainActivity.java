@@ -8,10 +8,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.swimfo.Adapter.ViewPagerAdapter;
+import com.example.swimfo.unorganized.Adapter.ViewPagerAdapter;
 import com.example.swimfo.Student.Fragment.HomeFragment;
 import com.example.swimfo.Student.Fragment.QuizFragment;
-import com.example.swimfo.game.GameFragment;
+import com.example.swimfo.Student.Fragment.GameFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {

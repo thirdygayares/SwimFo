@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.swimfo.Finish;
-import com.example.swimfo.Model.LeaderBoardModel;
+import com.example.swimfo.unorganized.Model.LeaderBoardModel;
 import com.example.swimfo.Modelclass;
 import com.example.swimfo.R;
 import com.google.android.gms.tasks.OnFailureListener;

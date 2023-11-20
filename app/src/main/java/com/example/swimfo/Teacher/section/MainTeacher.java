@@ -18,9 +18,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.swimfo.Adapter.AvailableClassAdapter;
+import com.example.swimfo.unorganized.Adapter.AvailableClassAdapter;
 import com.example.swimfo.LoginActivity;
-import com.example.swimfo.Model.SectionModel;
+import com.example.swimfo.unorganized.Model.SectionModel;
 import com.example.swimfo.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

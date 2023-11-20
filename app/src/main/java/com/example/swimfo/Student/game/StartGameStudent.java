@@ -1,4 +1,4 @@
-package com.example.swimfo.game;
+package com.example.swimfo.Student.game;
 
 import androidx.appcompat.app.AppCompatActivity;
 

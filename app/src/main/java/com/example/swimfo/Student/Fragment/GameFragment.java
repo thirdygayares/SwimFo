@@ -1,4 +1,4 @@
-package com.example.swimfo.game;
+package com.example.swimfo.Student.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 import com.example.swimfo.MainActivity;
 import com.example.swimfo.R;
-import com.example.swimfo.game.StartGameStudent;
+import com.example.swimfo.Student.game.StartGameStudent;
 
 
 public class GameFragment extends Fragment {

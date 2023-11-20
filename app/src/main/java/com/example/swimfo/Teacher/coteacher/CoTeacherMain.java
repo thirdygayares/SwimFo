@@ -16,19 +16,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.swimfo.Adapter.AvailableStudentAdapter;
 import com.example.swimfo.Teacher.adapter.CoTeacherListAdapter;
 import com.example.swimfo.Teacher.model.CoTeacherListModel;
 import com.example.swimfo.R;
-import com.example.swimfo.Teacher.section.StudentList;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;

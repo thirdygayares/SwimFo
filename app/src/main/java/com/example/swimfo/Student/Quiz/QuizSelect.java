@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.swimfo.Adapter.QuizAdapter;
-import com.example.swimfo.Model.QuizModel;
+import com.example.swimfo.unorganized.Adapter.QuizAdapter;
+import com.example.swimfo.unorganized.Model.QuizModel;
 import com.example.swimfo.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

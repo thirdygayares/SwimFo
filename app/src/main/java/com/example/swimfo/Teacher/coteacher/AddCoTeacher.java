@@ -17,12 +17,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.swimfo.MainActivity;
-import com.example.swimfo.Model.StudentModel;
+import com.example.swimfo.unorganized.Model.StudentModel;
 import com.example.swimfo.R;
-import com.example.swimfo.Teacher.AddStudent;
 import com.example.swimfo.Teacher.TeacherMain;
-import com.example.swimfo.Teacher.section.StudentList;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

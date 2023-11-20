@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.swimfo.Model.LeaderBoardModel;
-import com.example.swimfo.Adapter.LeaderboardAdapter;
+import com.example.swimfo.unorganized.Model.LeaderBoardModel;
+import com.example.swimfo.unorganized.Adapter.LeaderboardAdapter;
 import com.example.swimfo.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

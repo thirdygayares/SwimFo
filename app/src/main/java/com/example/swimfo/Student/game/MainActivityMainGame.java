@@ -1,4 +1,4 @@
-package com.example.swimfo.game;
+package com.example.swimfo.Student.game;
 
 import android.app.Dialog;
 import android.content.Intent;

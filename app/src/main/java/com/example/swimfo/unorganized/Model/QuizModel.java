@@ -1,4 +1,4 @@
-package com.example.swimfo.Model;
+package com.example.swimfo.unorganized.Model;
 
 public class QuizModel {
     private String quizNumber;

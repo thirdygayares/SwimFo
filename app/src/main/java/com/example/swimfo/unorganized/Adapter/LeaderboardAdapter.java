@@ -1,4 +1,4 @@
-package com.example.swimfo.Adapter;
+package com.example.swimfo.unorganized.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.swimfo.Model.LeaderBoardModel;
+import com.example.swimfo.unorganized.Model.LeaderBoardModel;
 import com.example.swimfo.R;
 
 import java.util.List;

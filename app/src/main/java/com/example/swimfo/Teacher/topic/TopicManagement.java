@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.swimfo.Adapter.TopicAdapter;
+import com.example.swimfo.unorganized.Adapter.TopicAdapter;
 import com.example.swimfo.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

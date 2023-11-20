@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.swimfo.legacy.AddQuestion;
+import com.example.swimfo.unorganized.legacy.AddQuestion;
 import com.example.swimfo.Teacher.TeacherMain;
 import com.example.swimfo.Teacher.topic.TopicManagement;
 import com.google.android.gms.tasks.OnCompleteListener;
