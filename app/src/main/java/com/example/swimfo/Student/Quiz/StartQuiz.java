@@ -28,6 +28,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.uzairiqbal.circulartimerview.CircularTimerListener;
+import com.uzairiqbal.circulartimerview.CircularTimerView;
+import com.uzairiqbal.circulartimerview.TimeFormatEnum;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,6 +55,8 @@ public class StartQuiz extends AppCompatActivity {
 
     private Date startTime;
     private Date endTime;
+    CircularTimerView progressTimerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +66,40 @@ public class StartQuiz extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         btnNext = findViewById(R.id.btnNext);
         progressBar = findViewById(R.id.progressBar);
+        progressTimerView = findViewById(R.id.progress_circular);
+
+        questionQuizListAdapter = new QuestionQuizListAdapter(this, quizStudentModels);
+
+        progressTimerView.setCircularTimerListener(new CircularTimerListener() {
+            @Override
+            public String updateDataOnTick(long remainingTimeInMs) {
+                return String.valueOf((int)Math.ceil((remainingTimeInMs / 1000.f)));
+            }
+
+            @Override
+            public void onTimerFinished() {
+//            Toast.makeText(QuizContainer.this, "FINISHED", Toast.LENGTH_SHORT).show();
+                progressTimerView.setPrefix("");
+                progressTimerView.setSuffix("");
+                progressTimerView.setText("FINISHED THANKS!");
+
+                    if (quizStudentModels.get(nextPosition).getAnswer().equals("")){
+                        Toast.makeText(StartQuiz.this, "Missed", Toast.LENGTH_SHORT).show();
+                     }
+
+                     nextMethod();
+
+
+            }
+        }, 30, TimeFormatEnum.SECONDS, 10);
+
+        progressTimerView.startTimer();
+
 
         //start Time
         startTime = new Date(System.currentTimeMillis());
         Log.d("Start Time", String.valueOf(startTime));
 
-        questionQuizListAdapter = new QuestionQuizListAdapter(this, quizStudentModels);
 
         Intent intent = getIntent();
         if(intent.getStringExtra("title") != null){
@@ -74,6 +107,8 @@ public class StartQuiz extends AppCompatActivity {
             quizQueztionData(quizname);
 
         }
+
+
 
         recyclerView.setAdapter(questionQuizListAdapter);
         layoutManager = new CustomLayoutManager(this);
@@ -94,14 +129,13 @@ public class StartQuiz extends AppCompatActivity {
 
         if(quizStudentModels.get(nextPosition).getAnswer().equals(correctAnswerList.get(nextPosition).getAnswer())) {
             correctAnswers++;
-
             Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+        } else if(quizStudentModels.get(nextPosition).getAnswer().equals("")){
+            unanswered++;
+
         } else if(!quizStudentModels.get(nextPosition).getAnswer().equals(correctAnswerList.get(nextPosition).getAnswer())){
             Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
             wrongAnswers++;
-        }else {
-            Toast.makeText(this, "Unanswered", Toast.LENGTH_SHORT).show();
-            unanswered++;
         }
 
 
@@ -118,6 +152,7 @@ public class StartQuiz extends AppCompatActivity {
         }
 
 
+        progressTimerView.startTimer();
 
 
         layoutManager.setScrollEnabled(true);
@@ -171,7 +206,7 @@ public class StartQuiz extends AppCompatActivity {
         hashMap2.put("wrong", wrongAnswers);
         hashMap2.put("unanswered", unanswered);
         hashMap2.put("time", elapsedTimeString);
-        hashMap2.put("date", new Date(System.currentTimeMillis()));
+        hashMap2.put("date", new Date().toString());
         hashMap2.put("quizname", getIntent().getStringExtra("title"));
         hashMap2.put("answers", hashMap);
         hashMap2.put("studentName", name);
@@ -249,6 +284,8 @@ public class StartQuiz extends AppCompatActivity {
 
 
                             }
+
+
 
                             questionQuizListAdapter.notifyDataSetChanged();
                             progressBar.setVisibility(View.GONE);

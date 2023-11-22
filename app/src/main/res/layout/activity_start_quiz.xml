@@ -14,12 +14,29 @@
         android:orientation="vertical"
         >
 
+        <com.uzairiqbal.circulartimerview.CircularTimerView
+            android:id="@+id/progress_circular"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            app:backgroundColor="#ffffff"
+            android:layout_gravity="center"
+            app:backgroundWidth="8"
+            app:isClockwise="true"
+            android:layout_marginVertical="10dp"
+            app:maxValue="100"
+            app:progressBackgroundColor="@color/main_blue"
+            app:progressColor="@color/red"
+            app:progressTextColor="#000000"
+            app:startingPoint="bottom"
+            app:textSize="10sp" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp"
+
         android:layout_marginBottom="80dp"
         android:id="@+id/recyclerView"
         />
