@@ -71,25 +71,32 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
                 mcHolder.btnAnswer1.setOnClickListener(v -> {
                     resetButtonColors(mcHolder);
                     mcHolder.btnAnswer1.setBackgroundColor(Color.BLUE); // Change color to blue to indicate selection
-                    // Do something with the answer
+                    // Do something with the answer\
+                    quizStudentModel.get(position).setAnswer(mcHolder.btnAnswer1.getText().toString());
                 });
 
                 mcHolder.btnAnswer2.setOnClickListener(v -> {
                     resetButtonColors(mcHolder);
                     mcHolder.btnAnswer2.setBackgroundColor(Color.BLUE);
                     // Do something with the answer
+                    quizStudentModel.get(position).setAnswer(mcHolder.btnAnswer2.getText().toString());
+
                 });
 
                 mcHolder.btnAnswer3.setOnClickListener(v -> {
                     resetButtonColors(mcHolder);
                     mcHolder.btnAnswer3.setBackgroundColor(Color.BLUE);
                     // Do something with the answer
+                    quizStudentModel.get(position).setAnswer(mcHolder.btnAnswer3.getText().toString());
+
                 });
 
                 mcHolder.btnAnswer4.setOnClickListener(v -> {
                     resetButtonColors(mcHolder);
                     mcHolder.btnAnswer4.setBackgroundColor(Color.BLUE);
                     // Do something with the answer
+                    quizStudentModel.get(position).setAnswer(mcHolder.btnAnswer4.getText().toString());
+
                 });
 
                 //mcHolder.btnCorrectAnswer.setText(question.getAnswer());

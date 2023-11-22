@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,6 +21,8 @@ import com.example.swimfo.Student.adapter.QuestionQuizListAdapter;
 import com.example.swimfo.Student.model.QuizStudentModel;
 import com.example.swimfo.Teacher.model.QuestionQuizModel;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +31,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 public class StartQuiz extends AppCompatActivity {
@@ -41,6 +46,13 @@ public class StartQuiz extends AppCompatActivity {
     private CustomLayoutManager layoutManager;
 
     private int nextPosition = 0;
+    private int correctAnswers = 0;
+    private int wrongAnswers = 0;
+    private int unanswered = 0;
+
+    private Date startTime;
+    private Date endTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +62,9 @@ public class StartQuiz extends AppCompatActivity {
         btnNext = findViewById(R.id.btnNext);
         progressBar = findViewById(R.id.progressBar);
 
+        //start Time
+        startTime = new Date(System.currentTimeMillis());
+        Log.d("Start Time", String.valueOf(startTime));
 
         questionQuizListAdapter = new QuestionQuizListAdapter(this, quizStudentModels);
 
@@ -61,25 +76,39 @@ public class StartQuiz extends AppCompatActivity {
         }
 
         recyclerView.setAdapter(questionQuizListAdapter);
-         layoutManager = new CustomLayoutManager(this);
+        layoutManager = new CustomLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         layoutManager.setScrollEnabled(false);
 
 
         btnNext.setOnClickListener(v -> {
+            if(quizStudentModels.get(nextPosition).getAnswer().equals("")) {
+                Toast.makeText(this, "Please enter an answer", Toast.LENGTH_SHORT).show();
+                return;
+            }
             nextMethod();
         });
     }
 
     private void nextMethod() {
 
+        if(quizStudentModels.get(nextPosition).getAnswer().equals(correctAnswerList.get(nextPosition).getAnswer())) {
+            correctAnswers++;
 
+            Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+        } else if(!quizStudentModels.get(nextPosition).getAnswer().equals(correctAnswerList.get(nextPosition).getAnswer())){
+            Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
+            wrongAnswers++;
+        }else {
+            Toast.makeText(this, "Unanswered", Toast.LENGTH_SHORT).show();
+            unanswered++;
+        }
 
 
         if (nextPosition == quizStudentModels.size()-1) {
-            // Handle end of quiz
-           startActivity(new Intent(StartQuiz.this, Finish.class));
-           finish();
+            // Handle share the answers
+            SaveAnswer();
+
             return;
         }
 
@@ -88,9 +117,14 @@ public class StartQuiz extends AppCompatActivity {
             btnNext.setText("Finish");
         }
 
+
+
+
         layoutManager.setScrollEnabled(true);
          nextPosition = getCurrentPosition() + 1;
         recyclerView.smoothScrollToPosition(nextPosition);
+
+
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -103,6 +137,58 @@ public class StartQuiz extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void SaveAnswer() {
+        progressBar.setVisibility(View.VISIBLE);
+
+        //fetch some user data
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        String name = user.getDisplayName();
+
+        //start Time
+        endTime = new Date(System.currentTimeMillis());
+        Log.d("End  Time", String.valueOf(endTime));
+
+        long elapsedMilliseconds = endTime.getTime() - startTime.getTime();
+        int elapsedSeconds = (int) (elapsedMilliseconds / 1000);
+        int elapsedMinutes = elapsedSeconds / 60;
+        int elapsedHours = elapsedMinutes / 60;
+        elapsedSeconds %= 60;
+        elapsedMinutes %= 60;
+
+        String elapsedTimeString = String.format("%02d:%02d:%02d", elapsedHours, elapsedMinutes, elapsedSeconds);
+        Log.d("Total Time", String.valueOf(elapsedTimeString));
+
+        HashMap<String, Object> hashMap = new HashMap<>();
+        for (int i = 0; i < quizStudentModels.size(); i++) {
+            hashMap.put("question" + (i + 1), quizStudentModels.get(i).getAnswer());
+        }
+
+        HashMap<String, Object> hashMap2 = new HashMap<>();
+        hashMap2.put("correct", correctAnswers);
+        hashMap2.put("wrong", wrongAnswers);
+        hashMap2.put("unanswered", unanswered);
+        hashMap2.put("time", elapsedTimeString);
+        hashMap2.put("date", new Date(System.currentTimeMillis()));
+        hashMap2.put("quizname", getIntent().getStringExtra("title"));
+        hashMap2.put("answers", hashMap);
+        hashMap2.put("studentName", name);
+
+        FirebaseDatabase.getInstance().getReference("QuizResult")
+                .child(getIntent().getStringExtra("title"))
+                .child(getIntent().getStringExtra("sectionId"))
+                .child(uid)
+                .updateChildren(hashMap2);
+
+
+        Intent intent = new Intent(StartQuiz.this, Finish.class);
+        intent.putExtra("correct", correctAnswers);
+        intent.putExtra("wrong", wrongAnswers);
+        intent.putExtra("unanswered", unanswered);
+        startActivity(intent);
+        finishAffinity();
     }
 
 
@@ -218,5 +304,8 @@ public class StartQuiz extends AppCompatActivity {
         ));
 
     }
+
+
+    //get Data
 
 }

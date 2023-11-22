@@ -18,13 +18,13 @@ public class Finish extends AppCompatActivity {
         wronh = findViewById(R.id.wscore);
         missed = findViewById(R.id.mscore);
 
-        String points =  getIntent().getStringExtra("SCORE");
-        String wpoints =  getIntent().getStringExtra("WSCORE");
-        String mpoints =  getIntent().getStringExtra("MSCORE");
+        Integer points =  getIntent().getIntExtra("correct", 0);
+        Integer wpoints =  getIntent().getIntExtra("wrong", 0);
+        Integer mpoints =  getIntent().getIntExtra("unanswered", 0);
 
-        score.setText(points);
-        wronh.setText(wpoints);
-        missed.setText(mpoints);
+        score.setText(String.valueOf(points));
+        wronh.setText(String.valueOf(wpoints));
+        missed.setText(String.valueOf(mpoints));
     }
 
     public void Finish(View view) {
