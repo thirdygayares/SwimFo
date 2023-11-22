@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Teacher.section.Leaderboard">
+
+    <RelativeLayout
+        android:id="@+id/action"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/main_blue"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/sectionTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="Leaderboard"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:layout_below="@+id/action"
+        android:id="@+id/top2"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Rank"
+                android:id="@+id/rank"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_toRightOf="@+id/rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:id="@+id/name"
+                android:layout_weight="1"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_toLeftOf="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+
+                android:layout_marginRight="50dp"
+                android:id="@+id/time"
+
+                android:layout_weight="1"
+                android:textColor="@color/black"/>
+
+
+            <TextView
+                android:layout_toLeftOf="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score"
+                android:layout_marginRight="70dp"
+                android:id="@+id/score"
+                android:layout_weight="1"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:id="@+id/date"
+                android:textColor="@color/black"/>
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <View
+        android:layout_below="@+id/top2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/top2"
+        >
+        <!-- Recycle View-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_view_av"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+        <!--end of recycle v iew-->
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

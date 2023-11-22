@@ -1,4 +1,4 @@
-package com.example.swimfo.unorganized.Adapter;
+package com.example.swimfo.Teacher.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;

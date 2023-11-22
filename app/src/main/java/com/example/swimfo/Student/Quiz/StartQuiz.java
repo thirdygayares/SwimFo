@@ -210,6 +210,8 @@ public class StartQuiz extends AppCompatActivity {
         hashMap2.put("quizname", getIntent().getStringExtra("title"));
         hashMap2.put("answers", hashMap);
         hashMap2.put("studentName", name);
+        hashMap2.put("sectionId", getIntent().getStringExtra("sectionId"));
+
 
         FirebaseDatabase.getInstance().getReference("QuizResult")
                 .child(getIntent().getStringExtra("title"))

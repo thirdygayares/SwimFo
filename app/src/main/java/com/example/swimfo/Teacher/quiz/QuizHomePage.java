@@ -1,5 +1,6 @@
 package com.example.swimfo.Teacher.quiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.swimfo.R;
+import com.example.swimfo.Student.Quiz.QuizInstruction;
 import com.example.swimfo.Teacher.adapter.MyInterface;
 import com.example.swimfo.Teacher.adapter.QuizListAdapter;
 import com.example.swimfo.Teacher.model.QuizListModel;
@@ -107,6 +109,7 @@ public class QuizHomePage extends Fragment implements MyInterface {
 
     @Override
     public void onItemClick(int pos, String categories) {
-
+        getContext().startActivity(new Intent(getContext(), SectionLeaderBoard.class)
+                .putExtra("title", quizListModels.get(pos).getName()));
     }
 }

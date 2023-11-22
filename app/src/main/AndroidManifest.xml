@@ -18,6 +18,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Teacher.quiz.StudentLeaderboard"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.quiz.SectionLeaderBoard"
+            android:exported="false" />
+        <activity
             android:name=".Student.Quiz.QuizInstruction"
             android:exported="false" />
         <activity
@@ -74,7 +80,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Teacher.TeacherMain"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -83,7 +89,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashScreen"
+            android:name=".Teacher.TeacherMain"
             android:exported="true" />
         <activity
             android:name=".Student.game.ChooseStroke"

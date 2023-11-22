@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.swimfo.unorganized.Adapter.AvailableStudentAdapter;
+import com.example.swimfo.Teacher.adapter.AvailableStudentAdapter;
 import com.example.swimfo.R;
 import com.example.swimfo.unorganized.Model.StudentModel;
 import com.example.swimfo.Teacher.AddStudent;

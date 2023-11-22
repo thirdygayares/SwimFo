@@ -18,7 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.swimfo.unorganized.Adapter.AvailableClassAdapter;
+import com.example.swimfo.Teacher.adapter.AvailableClassAdapter;
 import com.example.swimfo.LoginActivity;
 import com.example.swimfo.unorganized.Model.SectionModel;
 import com.example.swimfo.R;
