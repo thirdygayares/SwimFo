@@ -48,6 +48,10 @@ public class TopicContent extends AppCompatActivity {
         String chapDesc = getData.getStringExtra("chapDesc");
         String chapDemo = getData.getStringExtra("chapDemo");
 
+        //back button
+        back.setOnClickListener(v -> finish());
+
+
 //        String url = "https://youtu.be/fAbBd_Ev7w4";
         String videoId = extractVideoId(url);
         Toast.makeText(this, videoId, Toast.LENGTH_SHORT).show();
