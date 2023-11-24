@@ -24,7 +24,7 @@
             android:name=".Teacher.quiz.SectionLeaderBoard"
             android:exported="false" />
         <activity
-            android:name=".Student.Quiz.QuizInstruction"
+            android:name=".Student.Fragment.QuizFragment"
             android:exported="false" />
         <activity
             android:name=".CoTeacherOrStudent"

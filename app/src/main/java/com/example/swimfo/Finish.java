@@ -35,8 +35,6 @@ public class Finish extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(Finish.this, MainActivity.class);
-        startActivity(intent);
-        finishAffinity();
+       finish();
     }
 }

@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.swimfo.Student.Quiz.QuizInstruction;
 import com.example.swimfo.unorganized.Adapter.ViewPagerAdapter;
 import com.example.swimfo.Student.Fragment.HomeFragment;
 import com.example.swimfo.Student.Fragment.QuizFragment;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         adapter.AddFragment(new HomeFragment(),"Home");
-        adapter.AddFragment(new QuizFragment(),"Quiz");
+        adapter.AddFragment(new QuizInstruction(),"Quiz");
         adapter.AddFragment(new GameFragment(),"Game");
 
         viewPager.setAdapter(adapter);

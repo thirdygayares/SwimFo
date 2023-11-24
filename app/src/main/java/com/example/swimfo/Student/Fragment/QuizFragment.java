@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,10 +38,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuizFragment extends Fragment implements MyInterface {
+public class QuizFragment extends AppCompatActivity implements MyInterface {
     Button start;
 
-    private View view;
     private RecyclerView recyclerView;
     private QuizListAdapter quizListAdapter;
     private List<QuizListModel> quizListModels = new ArrayList<>();
@@ -63,24 +63,23 @@ public class QuizFragment extends Fragment implements MyInterface {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_quiz, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_quiz);
 
-        recyclerView = view.findViewById(R.id.recyclerView);
-        progressBar = view.findViewById(R.id.progressBar);
+        recyclerView = findViewById(R.id.recyclerView);
+        progressBar = findViewById(R.id.progressBar);
         //initialize adapter
-        quizListAdapter = new QuizListAdapter(getContext(), quizListModels, this);
+        quizListAdapter = new QuizListAdapter(this, quizListModels, this);
 
         //set up data
         quizListData();
 
         //set up recycler view
         recyclerView.setAdapter(quizListAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
 
-        return view;
     }
 
     private void quizListData() {
@@ -140,7 +139,7 @@ public class QuizFragment extends Fragment implements MyInterface {
                     check(sectionId, pos, uid);
                 } else {
                     // Handle the case where the user data doesn't exist
-                    Toast.makeText(getContext(), "Something went wrong.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Something went wrong.", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -172,7 +171,7 @@ public class QuizFragment extends Fragment implements MyInterface {
                     int unanswered = snapshot.child("unanswered").getValue(Integer.class);
 
 
-                    Intent intent = new Intent(getContext(), Finish.class);
+                    Intent intent = new Intent(getApplicationContext(), Finish.class);
                     intent.putExtra("correct", correctAnswers);
                     intent.putExtra("wrong", wrongAnswers);
                     intent.putExtra("unanswered", unanswered);
@@ -180,8 +179,8 @@ public class QuizFragment extends Fragment implements MyInterface {
 
                 } else {
                     // Handle the case where the user data doesn't exist
-                    getContext().startActivity(new Intent(getContext(), QuizInstruction.class)
-                            .putExtra("title", quizListModels.get(pos).getName()));
+                    getApplicationContext().startActivity(new Intent(getApplicationContext(), StartQuiz.class)
+                            .putExtra("title", quizListModels.get(pos).getName()).putExtra("sectionId", sectionId));
                 }
             }
 
