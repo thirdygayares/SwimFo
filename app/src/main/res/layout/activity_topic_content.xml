@@ -33,11 +33,6 @@
             android:textSize="20sp" />
 
     </RelativeLayout>
-    <FrameLayout
-        android:id="@+id/video_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -116,5 +111,9 @@
 
     </ScrollView>
 
-
+    <FrameLayout
+        android:id="@+id/video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 </RelativeLayout>

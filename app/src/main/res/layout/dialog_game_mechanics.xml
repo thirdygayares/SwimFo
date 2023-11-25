@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:padding="20dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Game Mechanics"
+        android:textSize="21sp"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/poppinsbold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Obstacles"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinssemibold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Various obstacles such as buoys, floating debris, and aquatic creatures are scattered throughout the course."
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinsregular"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Colliding with obstacles or opponents too frequently leads to a game over."
+        android:textSize="13sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinsregular"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Power-Ups"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinssemibold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Speed Boost: Collecting speed boost power-ups enhances your swimmer's speed for a short duration."
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinsregular"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shield"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinssemibold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Grants temporary invincibility, protecting the player from obstacles and opponents."
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinsregular"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scoring"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinssemibold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:text="Time taken to finish the race influences the score."
+        android:fontFamily="@font/poppinsregular"
+        />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_okay"
+        style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawableTint="@color/primary"
+        android:fontFamily="@font/poppinsbold"
+        android:paddingVertical="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:stateListAnimator="@null"
+        android:text="OKAY"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@color/primaryVariant"
+        app:cornerRadius="15dp"
+        app:rippleColor="@color/green"
+        app:strokeColor="@color/primaryVariant"
+        app:strokeWidth="1dp" />
+
+</LinearLayout>
