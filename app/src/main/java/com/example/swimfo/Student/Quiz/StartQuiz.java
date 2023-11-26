@@ -84,7 +84,7 @@ public class StartQuiz extends AppCompatActivity {
                 progressTimerView.setText("FINISHED THANKS!");
 
                     if (quizStudentModels.get(nextPosition).getAnswer().equals("")){
-                        Toast.makeText(StartQuiz.this, "Missed", Toast.LENGTH_SHORT).show();
+                        unanswered++;
                      }
 
                      nextMethod();
@@ -108,20 +108,19 @@ public class StartQuiz extends AppCompatActivity {
 
         }
 
-
-
         recyclerView.setAdapter(questionQuizListAdapter);
         layoutManager = new CustomLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
         layoutManager.setScrollEnabled(false);
 
 
         btnNext.setOnClickListener(v -> {
             if(quizStudentModels.get(nextPosition).getAnswer().equals("")) {
                 Toast.makeText(this, "Please enter an answer", Toast.LENGTH_SHORT).show();
-                return;
+            }else{
+                nextMethod();
             }
-            nextMethod();
         });
     }
 
@@ -131,24 +130,21 @@ public class StartQuiz extends AppCompatActivity {
             correctAnswers++;
             Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
         } else if(quizStudentModels.get(nextPosition).getAnswer().equals("")){
-            unanswered++;
-
+            Toast.makeText(StartQuiz.this, "Missed", Toast.LENGTH_SHORT).show();
         } else if(!quizStudentModels.get(nextPosition).getAnswer().equals(correctAnswerList.get(nextPosition).getAnswer())){
             Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
             wrongAnswers++;
         }
 
+        if (nextPosition == quizStudentModels.size()-2) {
+            // Handle end of quiz
+            btnNext.setText("Finish");
+        }
 
         if (nextPosition == quizStudentModels.size()-1) {
             // Handle share the answers
             SaveAnswer();
-
             return;
-        }
-
-        if (nextPosition == quizStudentModels.size()-2) {
-            // Handle end of quiz
-            btnNext.setText("Finish");
         }
 
 

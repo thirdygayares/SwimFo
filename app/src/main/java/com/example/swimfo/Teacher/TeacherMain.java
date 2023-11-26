@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.example.swimfo.LoginActivity;
 import com.example.swimfo.R;
+import com.example.swimfo.Teacher.Profile.ProfileHomePage;
 import com.example.swimfo.Teacher.coteacher.CoTeacherMain;
 import com.example.swimfo.Teacher.quiz.QuizHomePage;
 import com.example.swimfo.Teacher.section.MainTeacher;
@@ -73,6 +74,10 @@ public class TeacherMain extends AppCompatActivity {
                 }else if (itemId == R.id.nav_coteacher) {
                     // Handle action for About
                     selectedFragment = new CoTeacherMain();
+
+                }else if (itemId == R.id.nav_profile) {
+                    // Handle action for About
+                    selectedFragment = new ProfileHomePage();
 
                 }else if (itemId == R.id.nav_logout) {
 

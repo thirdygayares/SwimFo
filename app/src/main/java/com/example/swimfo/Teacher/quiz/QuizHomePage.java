@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -109,7 +110,17 @@ public class QuizHomePage extends Fragment implements MyInterface {
 
     @Override
     public void onItemClick(int pos, String categories) {
-        getContext().startActivity(new Intent(getContext(), SectionLeaderBoard.class)
-                .putExtra("title", quizListModels.get(pos).getName()));
+        if (categories.equals("delete")){
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference quizzesRef = database.getReference("Quiz");
+            quizzesRef.child(quizListModels.get(pos).getName()).removeValue();
+            quizListModels.remove(pos);
+            quizListAdapter.notifyDataSetChanged();
+            Toast.makeText(getContext(), "Quiz deleted", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            getContext().startActivity(new Intent(getContext(), SectionLeaderBoard.class)
+                    .putExtra("title", quizListModels.get(pos).getName()));
+        }
     }
 }

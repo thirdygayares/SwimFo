@@ -1,7 +1,6 @@
 package com.example.swimfo.Student.adapter;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,10 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,19 +52,19 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         QuestionQuizModel question = quizStudentModel.get(position);
+
         switch (holder.getItemViewType()) {
             case R.layout.item_student_quiz_multiple_choice:
                 MultipleChoiceViewHolder mcHolder = (MultipleChoiceViewHolder) holder;
                 mcHolder.txtQuestion.setText(question.getQuestionText());
                 mcHolder.txtQuestionNumber.setText("Question " + (position + 1));
 
-
                 mcHolder.btnAnswer1.setText(question.getOptions().get(0).toString());
                 mcHolder.btnAnswer2.setText(question.getOptions().get(1).toString());
                 mcHolder.btnAnswer3.setText(question.getOptions().get(2).toString());
                 mcHolder.btnAnswer4.setText(question.getOptions().get(3).toString());
 
-// Set the click listener for each button
+                // Set the click listener for each button
                 mcHolder.btnAnswer1.setOnClickListener(v -> {
                     resetButtonColors(mcHolder);
                     mcHolder.btnAnswer1.setBackgroundColor(Color.BLUE); // Change color to blue to indicate selection
@@ -102,14 +99,34 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
                 //mcHolder.btnCorrectAnswer.setText(question.getAnswer());
 
                 break;
+
             case R.layout.item_student_quiz_identification:
                 IdentificationViewHolder idHolder = (IdentificationViewHolder) holder;
                 idHolder.edtQuestion.setText(question.getQuestionText());
                 //set question number
                 question.setQuestionNumber(position + 1);
                 idHolder.txtQuestionNumber.setText("Question " + (position + 1));
+                idHolder.edtAnswer.setAllCaps(true);
 
-                UpdateAnswer(idHolder.edtAnswer, position);
+                idHolder.edtAnswer.setText(question.getAnswer());
+                //UpdateAnswer(idHolder.edtAnswer, position);
+
+                idHolder.btnSubmit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (idHolder.edtAnswer.getText().toString().isEmpty()){
+                            Toast.makeText(context, "Please enter your answer", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        String answer = idHolder.edtAnswer.getText().toString().toUpperCase();
+                        idHolder.edtAnswer.setText(answer);
+                        idHolder.edtAnswer.setEnabled(false);
+
+                        int currentPosition = holder.getAdapterPosition();
+                        quizStudentModel.get(currentPosition).setAnswer(idHolder.edtAnswer.getText().toString());
+                    }
+                });
+
                 break;
         }
     }
@@ -125,26 +142,35 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     public void UpdateAnswer(EditText editText, int position){
-        editText.addTextChangedListener(new TextWatcher() {
+        // Remove existing TextWatcher if any
+        editText.removeTextChangedListener((TextWatcher) editText.getTag());
+
+        TextWatcher textWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // This method is optional for this scenario
+                // Optional
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // This method is optional for this scenario
+                // Optional
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 Log.d("RESULT", s.toString() + " " + position);
+                Toast.makeText(context, s.toString(), Toast.LENGTH_SHORT).show();
                 quizStudentModel.get(position).setAnswer(s.toString());
+                // Optionally, notify the adapter if necessary
             }
-        });
+        };
+
+        // Store the TextWatcher in the EditText's tag so it can be retrieved later
+        editText.setTag(textWatcher);
+
+        // Add the TextWatcher to EditText
+        editText.addTextChangedListener(textWatcher);
     }
-
-
 
 
 
@@ -197,6 +223,7 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
     class IdentificationViewHolder extends RecyclerView.ViewHolder {
         TextView txtQuestionNumber;
         EditText edtQuestion, edtAnswer;
+        Button btnSubmit;
 
         public IdentificationViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -204,7 +231,7 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
         txtQuestionNumber = itemView.findViewById(R.id.txtQuestionNumber);
         edtQuestion = itemView.findViewById(R.id.edtQuestion);
         edtAnswer = itemView.findViewById(R.id.edtAnswer);
-
+        btnSubmit = itemView.findViewById(R.id.btnSubmit);
 
         }
     }

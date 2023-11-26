@@ -23,6 +23,7 @@ import com.example.swimfo.Student.Quiz.QuizContainer;
 import com.example.swimfo.R;
 import com.example.swimfo.Student.Quiz.QuizInstruction;
 import com.example.swimfo.Student.Quiz.StartQuiz;
+import com.example.swimfo.Student.adapter.QuizListStudentAdapter;
 import com.example.swimfo.Teacher.adapter.MyInterface;
 import com.example.swimfo.Teacher.adapter.QuizListAdapter;
 import com.example.swimfo.Teacher.model.QuizListModel;
@@ -42,7 +43,7 @@ public class QuizFragment extends AppCompatActivity implements MyInterface {
     Button start;
 
     private RecyclerView recyclerView;
-    private QuizListAdapter quizListAdapter;
+    private QuizListStudentAdapter quizListAdapter;
     private List<QuizListModel> quizListModels = new ArrayList<>();
     private ProgressBar progressBar;
 
@@ -70,7 +71,7 @@ public class QuizFragment extends AppCompatActivity implements MyInterface {
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
         //initialize adapter
-        quizListAdapter = new QuizListAdapter(this, quizListModels, this);
+        quizListAdapter = new QuizListStudentAdapter(this, quizListModels, this);
 
         //set up data
         quizListData();

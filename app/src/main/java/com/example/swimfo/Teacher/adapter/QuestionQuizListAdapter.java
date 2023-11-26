@@ -291,8 +291,6 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
         txtQuestionNumber = itemView.findViewById(R.id.txtQuestionNumber);
         edtQuestion = itemView.findViewById(R.id.edtQuestion);
         edtAnswer = itemView.findViewById(R.id.edtAnswer);
-
-
         }
     }
 
