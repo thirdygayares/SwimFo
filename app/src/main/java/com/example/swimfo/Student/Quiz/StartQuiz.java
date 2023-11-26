@@ -127,7 +127,7 @@ public class StartQuiz extends AppCompatActivity {
 
     private void nextMethod() {
 
-        if(quizStudentModels.get(nextPosition).getAnswer().equals(correctAnswerList.get(nextPosition).getAnswer())) {
+        if(quizStudentModels.get(nextPosition).getAnswer().equalsIgnoreCase(correctAnswerList.get(nextPosition).getAnswer())) {
             correctAnswers++;
             Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
         } else if(quizStudentModels.get(nextPosition).getAnswer().equals("")){

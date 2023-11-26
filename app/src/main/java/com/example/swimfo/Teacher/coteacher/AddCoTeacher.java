@@ -174,7 +174,7 @@ public class AddCoTeacher extends AppCompatActivity {
                     imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
                         imageUriPic = null;
                         // Create user in Firebase Authentication
-                        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, randomPassword)
                                 .addOnCompleteListener(task -> {
                                     if (task.isSuccessful()) {
                                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

@@ -180,7 +180,7 @@ public class QuizFragment extends AppCompatActivity implements MyInterface {
                 } else {
                     // Handle the case where the user data doesn't exist
                     getApplicationContext().startActivity(new Intent(getApplicationContext(), StartQuiz.class)
-                            .putExtra("title", quizListModels.get(pos).getName()).putExtra("sectionId", sectionId));
+                            .putExtra("title", quizListModels.get(pos).getName()).putExtra("sectionId", sectionId).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 }
             }
 
