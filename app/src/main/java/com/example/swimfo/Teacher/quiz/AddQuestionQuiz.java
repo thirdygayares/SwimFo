@@ -37,8 +37,8 @@ public class AddQuestionQuiz extends Fragment {
     private View view;
 
     private RecyclerView recyclerView;
-    private QuestionQuizListAdapter questionQuizListAdapter;
-    private List<QuestionQuizModel> questionQuizModels = new ArrayList<>();
+    public  QuestionQuizListAdapter questionQuizListAdapter;
+    public  List<QuestionQuizModel> questionQuizModels = new ArrayList<>();
     private MaterialButton btnAddMultipleChoiceQuestion, btnAddIdenticationQuestion, btnAddQuiz;
     private Spinner spinner;
     private TextView txtQuizTitle;
@@ -79,7 +79,7 @@ public class AddQuestionQuiz extends Fragment {
 
         recyclerView.setAdapter(questionQuizListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setHasFixedSize(true);
+        //recyclerView.setHasFixedSize(true);
         return view;
     }
 
@@ -145,7 +145,6 @@ public class AddQuestionQuiz extends Fragment {
             } else {
                 setUp(btn);
             }
-
         }
     }
 
@@ -158,15 +157,15 @@ public class AddQuestionQuiz extends Fragment {
                     Arrays.asList("", "", "", ""),
                     ""
             ));
-            questionQuizListAdapter.notifyDataSetChanged();
-        } else {
+            questionQuizListAdapter.notifyItemInserted(questionQuizModels.size() - 1);
+        } else if (btn == 1) {
             questionQuizModels.add(new QuestionQuizModel(
                     QuestionQuizModel.QuestionType.IDENTIFICATION,
                     "",
                     null,
                     ""
             ));
-            questionQuizListAdapter.notifyDataSetChanged();
+            questionQuizListAdapter.notifyItemInserted(questionQuizModels.size() - 1);
         }
     }
 

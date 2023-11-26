@@ -57,7 +57,11 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
                 MultipleChoiceViewHolder mcHolder = (MultipleChoiceViewHolder) holder;
                 mcHolder.edtQuestion.setText(question.getQuestionText());
                 mcHolder.txtQuestionNumber.setText("Question " + (position + 1));
-
+                mcHolder.edtOption1.setText(question.getOptions().get(0));
+                mcHolder.edtOption2.setText(question.getOptions().get(1));
+                mcHolder.edtOption3.setText(question.getOptions().get(2));
+                mcHolder.edtOption4.setText(question.getOptions().get(3));
+                mcHolder.btnCorrectAnswer.setText(question.getAnswer());
                 //mcHolder.btnCorrectAnswer.setText(question.getAnswer());
 
                 question.setQuestionNumber(position + 1);
@@ -79,6 +83,13 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
                             return;
                         }
 
+                        if (mcHolder.edtQuestion.getText().toString().isEmpty()) {
+                            Toast.makeText(context, "Please fill the question", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+
+
 
                         view.clearFocus(); // Clear focus from the button
                         mcHolder.spinner.performClick();
@@ -88,21 +99,21 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
                                 // Handle selection
                                  if (xx == 0) {
-
+                                     question.setAnswer("");
                                 }
                                 else if (xx == 1) {
                                     mcHolder.btnCorrectAnswer.setText(questionQuizModelList.get(holder.getAdapterPosition()).getOptions().get(0));
-                                    question.setAnswer(mcHolder.edtOption1.getText().toString());
+                                    question.setAnswer(question.getOptions().get(0));
                                 } else if (xx == 2) {
                                     mcHolder.btnCorrectAnswer.setText(questionQuizModelList.get(holder.getAdapterPosition()).getOptions().get(1));
-                                    question.setAnswer(mcHolder.edtOption2.getText().toString());
+                                     question.setAnswer(question.getOptions().get(1));
                                 } else if (xx == 3) {
                                     mcHolder.btnCorrectAnswer.setText(questionQuizModelList.get(holder.getAdapterPosition()).getOptions().get(2));
-                                    question.setAnswer(mcHolder.edtOption3.getText().toString());
-                                } else if (xx == 4) {
+                                     question.setAnswer(question.getOptions().get(2));
+                                 } else if (xx == 4) {
                                     mcHolder.btnCorrectAnswer.setText(questionQuizModelList.get(holder.getAdapterPosition()).getOptions().get(3));
-                                    question.setAnswer(mcHolder.edtOption4.getText().toString());
-                                }
+                                     question.setAnswer(question.getOptions().get(3));
+                                 }
                             }
 
                             @Override
