@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.swimfo.Finish;
+import com.example.swimfo.MainActivity;
 import com.example.swimfo.Student.Quiz.QuizContainer;
 import com.example.swimfo.R;
 import com.example.swimfo.Student.Quiz.QuizInstruction;
@@ -192,6 +193,14 @@ public class QuizFragment extends AppCompatActivity implements MyInterface {
                 // Handle any database errors here
             }
         });
+
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
     }
 }
