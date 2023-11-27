@@ -176,6 +176,8 @@ public class QuizFragment extends AppCompatActivity implements MyInterface {
                     intent.putExtra("correct", correctAnswers);
                     intent.putExtra("wrong", wrongAnswers);
                     intent.putExtra("unanswered", unanswered);
+                    intent.putExtra("quizName", quizListModels.get(pos).getName());
+                    intent.putExtra("sectionId", sectionId);
                     startActivity(intent);
 
                 } else {

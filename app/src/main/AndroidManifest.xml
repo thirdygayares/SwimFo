@@ -78,10 +78,10 @@
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".Teacher.TeacherMain"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -90,7 +90,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashScreen"
+            android:name=".Teacher.TeacherMain"
             android:exported="true" />
         <activity
             android:name=".Student.game.ChooseStroke"

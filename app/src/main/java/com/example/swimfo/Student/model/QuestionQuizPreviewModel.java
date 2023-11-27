@@ -1,10 +1,10 @@
-package com.example.swimfo.Teacher.model;
+package com.example.swimfo.Student.model;
 
 import java.util.List;
 
-public class QuestionQuizModel {
+public class QuestionQuizPreviewModel {
     public enum QuestionType { MULTIPLE_CHOICE, IDENTIFICATION }
-
+    String questionId;
     QuestionType type;
     int questionNumber;
     String questionText;
@@ -13,16 +13,25 @@ public class QuestionQuizModel {
     // Constructor, getters, and setters
 
 
-    public QuestionQuizModel() {
+    public QuestionQuizPreviewModel() {
     }
 
-    public QuestionQuizModel(QuestionType type, String questionText, List<String> options, String answer) {
+    public QuestionQuizPreviewModel(String questionId, QuestionType type, String questionText, List<String> options, String answer) {
+        this.questionId = questionId;
         this.type = type;
         this.questionText = questionText;
         this.options = options;
         this.answer = answer;
     }
 
+
+    public String getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(String questionId) {
+        this.questionId = questionId;
+    }
 
     public int getQuestionNumber() {
         return questionNumber;

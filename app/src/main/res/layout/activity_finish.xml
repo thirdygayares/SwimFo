@@ -30,85 +30,124 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/ll"
-        android:gravity="center"
-        android:layout_below="@+id/header"
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginBottom="60dp"
+        android:layout_below="@+id/header"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
-        <ImageView
-            android:layout_width="200dp"
-            android:src="@drawable/thumb"
-            android:layout_height="200dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="You've Got"
-            android:textColor="@color/black"
-            android:textSize="40sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:id="@+id/score"
-            android:textStyle="bold"
-            android:textColor="@color/green"
-            android:textSize="40sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Correct"
-            android:id="@+id/tv"
-            android:textStyle="bold"
-            android:textColor="@color/green" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:id="@+id/wscore"
-            android:textStyle="bold"
-            android:textColor="@color/red"
-            android:textSize="40sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wrong"
-            android:id="@+id/wtv"
-            android:textStyle="bold"
-            android:textColor="@color/red" />
- <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:id="@+id/mscore"
-            android:textStyle="bold"
-            android:textColor="@color/orange"
-            android:textSize="40sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Missed"
-            android:id="@+id/mtv"
-            android:textStyle="bold"
-            android:textColor="@color/orange" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/custom_poppins"
-            android:text="Kindly Take a sceenshot of your score."
-            android:id="@+id/ltv"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
+            <ImageView
+                android:layout_width="100dp"
+                android:src="@drawable/thumb"
+                android:layout_height="100dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You've Got"
+                android:textColor="@color/black"
+                android:textSize="30sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/score"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                android:textSize="40sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Correct"
+                android:id="@+id/tv"
+                android:textStyle="bold"
+                android:textColor="@color/green" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/wscore"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:textSize="40sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wrong"
+                android:id="@+id/wtv"
+                android:textStyle="bold"
+                android:textColor="@color/red" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/mscore"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:textSize="40sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Missed"
+                android:id="@+id/mtv"
+                android:textStyle="bold"
+                android:textColor="@color/orange" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/custom_poppins"
+                android:text="Kindly Take a sceenshot of your score."
+                android:id="@+id/ltv"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="@font/custom_poppins"
+                android:text="Preview your answer"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:padding="20dp"
+                android:layout_height="wrap_content"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+
 
     <ImageView
-        android:layout_below="@+id/ll"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="200dp"/>
 
@@ -122,5 +161,15 @@
         android:onClick="Finish"
         android:layout_marginBottom="10dp"
         android:background="@drawable/custom_btn_bg"/>
+
+
+    <ProgressBar
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:indeterminateTint="@color/primaryVariant"
+        android:visibility="gone"
+        />
 
 </RelativeLayout>

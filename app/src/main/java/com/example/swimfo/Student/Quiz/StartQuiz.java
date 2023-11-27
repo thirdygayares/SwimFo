@@ -220,6 +220,8 @@ public class StartQuiz extends AppCompatActivity {
         intent.putExtra("correct", correctAnswers);
         intent.putExtra("wrong", wrongAnswers);
         intent.putExtra("unanswered", unanswered);
+        intent.putExtra("quizName", getIntent().getStringExtra("title"));
+        intent.putExtra("sectionId", getIntent().getStringExtra("sectionId"));
         startActivity(intent);
         finishAffinity();
     }

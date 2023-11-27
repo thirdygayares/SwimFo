@@ -1,7 +1,6 @@
 package com.example.swimfo.Student.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -19,17 +18,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.swimfo.R;
-import com.example.swimfo.Student.model.QuizStudentModel;
-import com.example.swimfo.Teacher.model.QuestionQuizModel;
-import com.google.android.material.button.MaterialButton;
+import com.example.swimfo.Student.model.QuestionQuizPreviewModel;
 
 import java.util.List;
 
-public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
+public class QuestionQuizPreviewListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
     Context context;
-    List<QuestionQuizModel> quizStudentModel;
+    List<QuestionQuizPreviewModel> quizStudentModel;
     private int selectedPosition = -1; // -1 indicates nothing is selected
-    public QuestionQuizListAdapter(Context context, List<QuestionQuizModel> quizStudentModel) {
+    public QuestionQuizPreviewListAdapter(Context context, List<QuestionQuizPreviewModel> quizStudentModel) {
         this.context = context;
         this.quizStudentModel = quizStudentModel;
     }
@@ -39,11 +36,11 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
         switch (viewType) {
-            case R.layout.item_student_quiz_multiple_choice:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_student_quiz_multiple_choice, parent, false);
+            case R.layout.item_student_quiz_preview_multiple_choice:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_student_quiz_preview_multiple_choice, parent, false);
                 return new MultipleChoiceViewHolder(view);
-            case R.layout.item_student_quiz_identification:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_student_quiz_identification, parent, false);
+            case R.layout.item_student_quiz_preview_identification:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_student_quiz_preview_identification, parent, false);
                 return new IdentificationViewHolder(view);
             default:
                 // Handle default case
@@ -53,10 +50,10 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        QuestionQuizModel question = quizStudentModel.get(position);
+        QuestionQuizPreviewModel question = quizStudentModel.get(position);
 
         switch (holder.getItemViewType()) {
-            case R.layout.item_student_quiz_multiple_choice:
+            case R.layout.item_student_quiz_preview_multiple_choice:
                 MultipleChoiceViewHolder mcHolder = (MultipleChoiceViewHolder) holder;
                 mcHolder.txtQuestion.setText(question.getQuestionText());
                 mcHolder.txtQuestionNumber.setText("Question " + (position + 1));
@@ -65,38 +62,39 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
                 mcHolder.radioButton2.setText(question.getOptions().get(1).toString());
                 mcHolder.radioButton3.setText(question.getOptions().get(2).toString());
                 mcHolder.radioButton4.setText(question.getOptions().get(3).toString());
+                mcHolder.radioGroup.setEnabled(false);
 
 
+                mcHolder.radioButton1.setClickable(false);
+                mcHolder.radioButton2.setClickable(false);
+                mcHolder.radioButton3.setClickable(false);
+                mcHolder.radioButton4.setClickable(false);
 
-                mcHolder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        int currentPosition = holder.getAdapterPosition();
+                mcHolder.choose.setVisibility(View.GONE);
 
-                        // checkedId is the RadioButton selected
-                        switch(checkedId) {
+                String a = question.getOptions().get(0).toString();
+                String b = question.getOptions().get(1).toString();
+                String c = question.getOptions().get(2).toString();
+                String d = question.getOptions().get(3).toString();
 
-                            case R.id.radio_button1:
-                                quizStudentModel.get(currentPosition).setAnswer(mcHolder.radioButton1.getText().toString());
-                                break;
-                            case R.id.radio_button2:
-                                quizStudentModel.get(currentPosition).setAnswer(mcHolder.radioButton2.getText().toString());
-                                break;
-                            case R.id.radio_button3:
-                                quizStudentModel.get(currentPosition).setAnswer(mcHolder.radioButton3.getText().toString());
-                                break;
-                            case R.id.radio_button4:
-                                quizStudentModel.get(currentPosition).setAnswer(mcHolder.radioButton4.getText().toString());
-                                break;
-                        }
+
+                if(question.getAnswer() != null){
+                    if (question.getAnswer().equals(a)){
+                        mcHolder.radioButton1.setChecked(true);
+                    }else if (question.getAnswer().equals(b)){
+                        mcHolder.radioButton2.setChecked(true);
+                    } else if (question.getAnswer().equals(c)){
+                        mcHolder.radioButton3.setChecked(true);
+                    } else if (question.getAnswer().equals(d)){
+                        mcHolder.radioButton4.setChecked(true);
+                    } else {
+
                     }
-                });
-
-
+                }
 
                 break;
 
-            case R.layout.item_student_quiz_identification:
+            case R.layout.item_student_quiz_preview_identification:
                 IdentificationViewHolder idHolder = (IdentificationViewHolder) holder;
                 idHolder.edtQuestion.setText(question.getQuestionText());
                 //set question number
@@ -106,6 +104,9 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
                 idHolder.edtAnswer.setText(question.getAnswer());
                 //UpdateAnswer(idHolder.edtAnswer, position);
+
+                idHolder.edtAnswer.setEnabled(false);
+                idHolder.btnSubmit.setVisibility(View.GONE);
 
                 idHolder.btnSubmit.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -173,12 +174,12 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemViewType(int position) {
-        QuestionQuizModel question = quizStudentModel.get(position);
+        QuestionQuizPreviewModel question = quizStudentModel.get(position);
         switch (question.getType()) {
             case MULTIPLE_CHOICE:
-                return R.layout.item_student_quiz_multiple_choice;
+                return R.layout.item_student_quiz_preview_multiple_choice;
             case IDENTIFICATION:
-                return R.layout.item_student_quiz_identification;
+                return R.layout.item_student_quiz_preview_identification;
             default:
                 return -1;
         }
@@ -192,7 +193,7 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     class MultipleChoiceViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtQuestionNumber, txtQuestion;
+        TextView txtQuestionNumber, txtQuestion, choose;
 
         RadioGroup radioGroup;
         RadioButton radioButton1, radioButton2, radioButton3, radioButton4;
@@ -201,7 +202,7 @@ public class QuestionQuizListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
             txtQuestionNumber = itemView.findViewById(R.id.txtQuestionNumber);
             txtQuestion = itemView.findViewById(R.id.txtQuestion);
-
+            choose = itemView.findViewById(R.id.choose);
 
 
              radioGroup = itemView.findViewById(R.id.radioGroup);
