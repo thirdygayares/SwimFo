@@ -211,6 +211,8 @@ public class StartGameStudent extends AppCompatActivity {
                 Map<String, ReplacementInfo> replacements = new HashMap<>();
                 replacements.put("title.png", new ReplacementInfo("swimlogo.png", 500, 500));
                 replacements.put("more-games.png", new ReplacementInfo("img.png", 200, 200)); // Replace with your actual image file name
+                replacements.put("kitty.png", new ReplacementInfo("img_1.png", 300, 300)); // Replace with your actual image file name
+
 
                 for (Map.Entry<String, ReplacementInfo> entry : replacements.entrySet()) {
                     if (url.endsWith(entry.getKey())) {
